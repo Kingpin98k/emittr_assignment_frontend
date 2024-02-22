@@ -5,10 +5,12 @@ const initialState = {
 	state: "hide",
 };
 
+const API = import.meta.env.VITE_API;
+
 export const getLeaderBoard = createAsyncThunk(
 	"game/getLeaderBoard",
 	async () => {
-		const response = await fetch("http://127.0.0.1:8080/leaderboard", {
+		const response = await fetch(`${API}/leaderboard`, {
 			method: "GET",
 		});
 		const data = await response.json();

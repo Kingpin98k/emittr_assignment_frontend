@@ -18,8 +18,10 @@ const initialState = {
 	bombCards: 0,
 };
 
+const API = import.meta.env.VITE_API;
+
 export const drawCard = createAsyncThunk("game/drawCard", async (email) => {
-	const response = await fetch(`http://127.0.0.1:8080/drawCard/${email}`, {
+	const response = await fetch(`${API}/drawCard/${email}`, {
 		method: "POST",
 	});
 	const data = await response.json();
@@ -27,7 +29,7 @@ export const drawCard = createAsyncThunk("game/drawCard", async (email) => {
 });
 
 export const startGame = createAsyncThunk("game/startGame", async (email) => {
-	const response = await fetch(`http://127.0.0.1:8080/startGame/${email}`, {
+	const response = await fetch(`${API}/startGame/${email}`, {
 		method: "POST",
 	});
 	const data = await response.json();
@@ -37,7 +39,7 @@ export const startGame = createAsyncThunk("game/startGame", async (email) => {
 export const getCurrentGame = createAsyncThunk(
 	"game/getCurrentGame",
 	async (email) => {
-		const response = await fetch(`http://127.0.0.1:8080/currentGame/${email}`, {
+		const response = await fetch(`${API}/currentGame/${email}`, {
 			method: "GET",
 		});
 		const data = await response.json();

@@ -22,11 +22,17 @@ function Ready() {
 			</div>
 			<div className="flex flex-col gap-3">
 				{game.pointer !== -1 && (
-					<button className="btn" onClick={handleResume}>
+					<button
+						className="btn bg-[#1098ad] hover:bg-transparent"
+						onClick={handleResume}
+					>
 						Resume
 					</button>
 				)}
-				<button className="btn" onClick={handleRestart}>
+				<button
+					className="btn bg-[#ffa94d] hover:bg-transparent"
+					onClick={handleRestart}
+				>
 					New Game
 				</button>
 			</div>
