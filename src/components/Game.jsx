@@ -60,7 +60,11 @@ function Game() {
 					<button
 						className="btn min-w-[20rem]  bg-[#1098ad] disabled:bg-transparent"
 						onClick={handleDraw}
-						disabled={!show || game.topCard === "shuffle"}
+						disabled={
+							!show ||
+							game.topCard === "shuffle" ||
+							game.cardState === "loading"
+						}
 					>
 						{game.pointer < 4 ? "Draw" : "Finish"}
 					</button>
